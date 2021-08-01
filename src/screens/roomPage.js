@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 const RoomPage = ({ isBoardActive, setBoardActive }) => {
   const { roomId } = useParams();
 
+  console.log(roomId);
+
   return (
     <>
       <div className="flex flex-col md:flex-row  xs:flex-col w-full justify-start gap-x-4 ">

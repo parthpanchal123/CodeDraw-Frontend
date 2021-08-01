@@ -37,7 +37,7 @@ const themeOptions = [
   { value: "xq-light", label: "Light" },
 ];
 
-const CodeEditorWidget = ({ socket }) => {
+const CodeEditorWidget = ({ socket, code, setCode }) => {
   const [theme, setTheme] = useState({ value: "dracula", label: "Dracula" });
   const [lang, setLang] = useState({
     value: "javascript",
@@ -48,7 +48,7 @@ const CodeEditorWidget = ({ socket }) => {
   const inputRef = useRef(null);
   const [output, setOutput] = useState("");
   const [inputArg, setInputArgs] = useState("");
-  const [code, setCode] = useState("");
+  const [myCode, setMyCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -68,7 +68,7 @@ const CodeEditorWidget = ({ socket }) => {
     outputRef.current.value = "";
     setLoading(true);
 
-    if (code === "") {
+    if (myCode === "" && code === "") {
       toast.dark("No code to compile !", {
         style: {
           fontFamily: "Poppins",
@@ -88,7 +88,7 @@ const CodeEditorWidget = ({ socket }) => {
         files: [
           {
             name: "program." + lang.extension,
-            content: code,
+            content: code ?? myCode,
           },
         ],
         stdin: inputArg,
@@ -151,7 +151,7 @@ const CodeEditorWidget = ({ socket }) => {
         <div className="flex flex-row h-4/6 m-5 gap-x-2 ">
           <div className="w-3/4 rounded-md shadow-2xl">
             <CodeMirror
-              value={""}
+              value={code}
               className="h-full"
               options={{
                 theme: theme.value,
@@ -166,7 +166,7 @@ const CodeEditorWidget = ({ socket }) => {
               ref={editorRef}
               onChange={(inst) => {
                 setCode(inst.getValue());
-                throttle(sendChanges(inst), 1000);
+                throttle(sendChanges(inst), 500);
               }}
             />
           </div>

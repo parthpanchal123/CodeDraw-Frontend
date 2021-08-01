@@ -13,7 +13,7 @@ const peers = {};
 const peer = new Peer(undefined, {
   path: "/peerJs",
   host: "/",
-  port: process.env.PORT || 5000,
+  port: parseInt(process.env.PORT) || 5000,
 });
 const Video = ({ roomId }) => {
   const myVideoRef = useRef(null);

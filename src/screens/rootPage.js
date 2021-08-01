@@ -31,7 +31,7 @@ const Rootpage = () => {
     }
 
     try {
-      history.replace(`/${meetRef.current.value}`);
+      history.push(`/${meetRef.current.value}`);
     } catch (error) {
       console.log(error);
     }
