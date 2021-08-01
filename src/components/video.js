@@ -1,6 +1,5 @@
 import { useRef, useEffect, useContext, useState } from "react";
 import { SocketContext } from "../context/socket";
-import Peer from "peerjs";
 import dotenv from "dotenv";
 import { MdVideocam, MdVideocamOff, MdMic, MdMicOff } from "react-icons/md";
 import { toast } from "react-toastify";
@@ -10,12 +9,7 @@ dotenv.config();
 
 const peers = {};
 
-const peer = new Peer(undefined, {
-  path: "/peerJs",
-  host: "/",
-  port: parseInt(process.env.PORT) || 5000,
-});
-const Video = ({ roomId }) => {
+const Video = ({ roomId, peer }) => {
   const myVideoRef = useRef(null);
   const videoGridRef = useRef(null);
   const [myCamOn, setMyCamOn] = useState(false);
@@ -58,7 +52,6 @@ const Video = ({ roomId }) => {
 
           default:
             break;
-          // toast.error(err.message);
         }
 
         setMyCamOn(false);
@@ -95,8 +88,6 @@ const Video = ({ roomId }) => {
               videoElem.addEventListener("volumechange", () => {
                 console.log("Volume change");
               });
-
-              // videoGridRef.current.appendChild(videoElem);
             });
 
             call.on("closeVideo", () => {
@@ -143,6 +134,21 @@ const Video = ({ roomId }) => {
       const videoElementToEnable = document.getElementById(userId);
       if (!videoElementToEnable) return;
       videoElementToEnable.style.display = "block";
+    });
+
+    socket.on("audio-off", (userId) => {
+      console.log("Disabling audio of", userId);
+      const audioElementToDisable = document.getElementById(userId);
+      if (!audioElementToDisable) return;
+
+      audioElementToDisable.muted = true;
+    });
+
+    socket.on("audio-on", (userId) => {
+      console.log("Enabling audio for", userId);
+      const audioElementToEnable = document.getElementById(userId);
+      if (!audioElementToEnable) return;
+      audioElementToEnable.muted = false;
     });
 
     peer.on("open", (id) => {
@@ -193,14 +199,16 @@ const Video = ({ roomId }) => {
   }, [roomId, socket]);
 
   const muteUnmute = () => {
-    console.log("Status is " + myMicOn.toString());
+    if (!myStream) return;
 
     if (myMicOn) {
       myStream.getAudioTracks()[0].enabled = false;
+      socket.emit("audio-off", peer.id);
       setMyMicOn((myMicOn) => !myMicOn);
     } else {
-      setMyMicOn((myMicOn) => !myMicOn);
       myStream.getAudioTracks()[0].enabled = true;
+      socket.emit("audio-on", peer.id);
+      setMyMicOn((myMicOn) => !myMicOn);
     }
   };
 
