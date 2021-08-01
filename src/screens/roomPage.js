@@ -11,7 +11,7 @@ dotenv.config();
 
 const peer = new Peer(undefined, {
   path: "/peerJs",
-  host: "/",
+  host: process.env.REACT_APP_SOCKET_SERVER_URL,
   port: parseInt(process.env.PORT) || 5000,
 });
 
