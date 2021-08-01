@@ -23,6 +23,7 @@ const RoomPage = ({ isBoardActive, setBoardActive }) => {
       host: process.env.REACT_APP_SOCKET_SERVER_URL,
       port: parseInt(process.env.PORT) || 5000,
     });
+    console.log(peer.id);
     socket.emit("join-room", roomId, peer.id);
   }, [roomId, socket]);
 
