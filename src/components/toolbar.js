@@ -1,9 +1,4 @@
-import "antd/dist/antd.css";
-import {
-  UndoOutlined,
-  ClearOutlined,
-  FormatPainterOutlined,
-} from "@ant-design/icons";
+import { GrUndo, GrBrush, GrPowerReset } from "react-icons/gr";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
@@ -30,27 +25,22 @@ const Toolbar = ({ setColor, undo, clearDrawing, setBrushRadius }) => {
         className="rounded-full mx-1 h-8 w-8 flex items-center justify-center transform hover:scale-110 motion-reduce:transform-none "
         onClick={(e) => setColor("green")}
       >
-        <UndoOutlined
-          style={{ fontSize: "28px", color: "black" }}
-          onClick={(e) => undo()}
-        />
+        <GrUndo size={22} onClick={(e) => undo()} />
       </span>
 
       <span
         className="rounded-full mx-1 h-8 w-8 flex items-center justify-center transform hover:scale-110 motion-reduce:transform-none "
         onClick={(e) => setColor("green")}
       >
-        <ClearOutlined
-          style={{ fontSize: "28px", color: "black" }}
+        <GrPowerReset
+          size={20}
+          // style={{ fontSize: "28px", color: "black" }}
           onClick={(e) => clearDrawing()}
         />
       </span>
 
       <span className=" flex flex-row ml-8 w-28">
-        <FormatPainterOutlined
-          style={{ fontSize: "26px", color: "black" }}
-          className="mr-3"
-        />
+        <GrBrush size={22} className="mr-3" />
         <Slider
           min={1}
           onChange={(num) => setBrushRadius(num)}
