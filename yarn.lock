@@ -10271,6 +10271,11 @@ react-fade-in@^2.0.1:
   resolved "https://registry.yarnpkg.com/react-fade-in/-/react-fade-in-2.0.1.tgz#b4bcd7dac63d6857ebcd68facbff2f5f9616278f"
   integrity sha512-oqS/WT4znaXEHmL+yo0IDUDY7uC9K4RP35j1SdRUEBspR09B2iIC0i8oJ28tPOr6Ez/L2aktF9p89j+DbsTVNw==
 
+react-icons@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
+  integrity sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
+
 react-input-autosize@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-3.0.0.tgz#6b5898c790d4478d69420b55441fcc31d5c50a85"
