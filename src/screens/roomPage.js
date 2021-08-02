@@ -15,7 +15,7 @@ const peer = new Peer(undefined, {
     process.env.NODE_ENV === "production"
       ? process.env.REACT_APP_SOCKET_SERVER_URL
       : "/",
-  port: parseInt(process.env.PORT) || 5000,
+  port: process.env.NODE_ENV === "production" ? 443 : 5000,
   secure: process.env.NODE_ENV === "production" ? true : false,
 });
 
