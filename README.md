@@ -1,3 +1,37 @@
+<br />
+<p align="center">
+  <img src="https://i.imgur.com/8qDPcry.png" alt="Dash image" style="border-radius : 25px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
+<h1 align="center"> <i> <u>CodeDraw</u></i></h1>
+  <h3 align="center">
+    An easy online app for brainstorming via doodling on whiteboard and pair-programming along with audio/video .   
+    <br />
+  </h3>
+</p>
+
+## Screens
+
+<p align="center">
+<img style="margin:1em;border-radius : 25px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  " src="https://i.imgur.com/lU4KHvj.png" width="100%"  />
+  <strong><u><i>Doodle Screen</i></u></strong>
+  <br>
+  <br>
+  <br>
+<img style="margin:1em; border-radius : 25px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="https://i.imgur.com/beXb0LK.png"/><br>
+   <strong><u><i>Coding Screen</i></u></strong>
+</p>
+
+### Built With
+
+- [ReactJS](https://reactjs.org/) - The Frontend framework .
+- [Node & Express](https://nodejs.org/en/) - The backend API .
+- [Tailwind CSS](https://tailwindcss.com/) - Styling the front-end layout and components .
+- [Socket.io](https://socket.io/) - Signalling and emitting events to the client .
+- [Socket.io client](https://www.npmjs.com/package/socket.io-client) - Capturing the events emitted by the socket server and updating the UI.
+- [Peerjs](https://peerjs.com/) - Managing audio/video streams between clients in a group .
+- [CodeMirror](https://uiwjs.github.io/react-codemirror/) - The Code Editor component .
+- [Heroku](https://www.heroku.com/) - Deployed the backend Node API.
+- [Netlify](https://www.netlify.com/) - Deployed the frontend React App .
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
