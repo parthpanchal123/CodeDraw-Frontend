@@ -85,8 +85,14 @@ const Video = ({ roomId, peer }) => {
                 videoElem.play();
               });
 
-              videoElem.addEventListener("volumechange", () => {
+              videoElem.addEventListener("ratechange", (event) => {
+                console.log("The playback rate changed.");
+                console.log(event);
+              });
+
+              videoElem.addEventListener("volumechange", (event) => {
                 console.log("Volume change");
+                console.log(event);
               });
             });
 
@@ -245,7 +251,7 @@ const Video = ({ roomId, peer }) => {
         id={peer.id}
         autoPlay={true}
         className="rounded-md"
-        poster="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Fphotography-solid-4%2F32%2FPhotography_camera_no_off_forbidden_photo_video-512.png&f=1&nofb=1"
+        poster="https://i.imgur.com/bGOuVkD.png"
       />
 
       <div className="flex flex-row justify-center mt-1 rounded-lg shadow-2xl gap-x-4">
