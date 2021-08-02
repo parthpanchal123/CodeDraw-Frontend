@@ -44,7 +44,7 @@ const Rootpage = () => {
       const meetingId = await axios.post(
         process.env.REACT_APP_SOCKET_SERVER_URL + "/getId"
       );
-      console.log(meetingId.data.id);
+      // console.log(meetingId.data.id);
       setId(meetingId.data.id);
       toast(" 🚀 Copy and Send the meet id to your friends ", {
         style: {
