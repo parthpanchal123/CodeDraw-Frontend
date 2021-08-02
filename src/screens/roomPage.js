@@ -9,7 +9,15 @@ import "react-toastify/dist/ReactToastify.css";
 
 dotenv.config();
 
-let peer;
+const peer = new Peer(undefined, {
+  path: "/peerJs",
+  host:
+    process.env.NODE_ENV === "production"
+      ? process.env.REACT_APP_SOCKET_SERVER_URL
+      : "/",
+  port: parseInt(process.env.PORT) || 5000,
+  secure: process.env.NODE_ENV === "production" ? true : false,
+});
 
 const RoomPage = ({ isBoardActive, setBoardActive }) => {
   const { roomId } = useParams();
@@ -18,11 +26,7 @@ const RoomPage = ({ isBoardActive, setBoardActive }) => {
   console.log(roomId);
 
   useEffect(() => {
-    peer = new Peer(undefined, {
-      path: "/peerJs",
-      host: process.env.REACT_APP_SOCKET_SERVER_URL,
-      port: parseInt(process.env.PORT) || 5000,
-    });
+    console.log(peer);
     console.log(peer.id);
     socket.emit("join-room", roomId, peer.id);
   }, [roomId, socket]);
