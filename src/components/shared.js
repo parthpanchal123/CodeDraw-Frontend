@@ -30,8 +30,6 @@ const SharedContent = ({ isBoardActive, setBoardActive }) => {
     console.log("Updating data");
 
     setData(data);
-
-    // setUpdate((update) => !update);
   };
 
   const handleReceivedEditorData = (data) => {
@@ -68,9 +66,6 @@ const SharedContent = ({ isBoardActive, setBoardActive }) => {
     canvas.undo();
   };
 
-  // const loadData = () => {
-  //   canvas.loadSaveData(data);
-  // };
   return (
     <div className="flex flex-grow font-body">
       {isBoardActive ? (
