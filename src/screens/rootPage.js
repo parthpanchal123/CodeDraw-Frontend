@@ -42,7 +42,7 @@ const Rootpage = () => {
 
     try {
       const meetingId = await axios.post(
-        process.env.REACT_APP_SOCKET_SERVER_URL + "/getId"
+        process.env.REACT_APP_BACKEND_SERVER_URL + "/getId"
       );
       // console.log(meetingId.data.id);
       setId(meetingId.data.id);

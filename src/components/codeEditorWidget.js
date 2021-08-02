@@ -97,7 +97,7 @@ const CodeEditorWidget = ({ socket, code, setCode }) => {
 
     try {
       const d = await axios.post(
-        process.env.REACT_APP_SOCKET_SERVER_URL + "exec",
+        process.env.REACT_APP_BACKEND_SERVER_URL + "/exec",
         curr,
         {
           headers: {
