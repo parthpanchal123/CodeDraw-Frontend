@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 dotenv.config();
 
+//Config Peer Object
 const peer = new Peer(undefined, {
   path: "/peerJs",
   host:
