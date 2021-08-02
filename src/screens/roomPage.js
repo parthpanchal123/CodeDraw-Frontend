@@ -10,13 +10,13 @@ import "react-toastify/dist/ReactToastify.css";
 dotenv.config();
 
 const peer = new Peer(undefined, {
-  path: "/",
+  path: "/peerJs",
   host:
     process.env.NODE_ENV === "production"
       ? process.env.REACT_APP_SOCKET_SERVER_URL
       : "/",
   port: process.env.NODE_ENV === "production" ? 443 : 5000,
-  key: "peerJs",
+  // key: "peerJs",
   secure: process.env.NODE_ENV === "production" ? true : false,
 });
 
