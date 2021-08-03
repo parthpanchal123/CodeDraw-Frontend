@@ -8,6 +8,7 @@
   </h3>
 </p>
 
+<span>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
 <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
@@ -15,6 +16,7 @@
 <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
 <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"/>
 <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"/>
+<span/>
 
 ## Screens
 
@@ -43,6 +45,11 @@
 ### Backend
 
 Find the backend API code for this project [here](https://github.com/parthpanchal123/CodeDraw-Backend)
+
+### Issues to be fixed
+
+- The Code sharing gets delayed sometimes .
+- The Doodle disappears for the person drawing in some scenarios.
 
 # Getting Started with Create React App
 
