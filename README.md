@@ -11,12 +11,12 @@
 ## Screens
 
 <p align="center">
-<img style="margin:1em;border-radius : 25px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  " src="https://i.imgur.com/lU4KHvj.png" width="100%"  />
+<img style="margin:1em;border-radius : 25px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  " src="https://github.com/parthpanchal123/CodeDraw-Frontend/blob/master/graphics/doodle.png" width="100%"  />
   <strong><u><i>Doodle Screen</i></u></strong>
   <br>
   <br>
   <br>
-<img style="margin:1em; border-radius : 25px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="https://i.imgur.com/beXb0LK.png"/><br>
+<img style="margin:1em; border-radius : 25px ; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  src="https://github.com/parthpanchal123/CodeDraw-Frontend/blob/master/graphics/code.png"/><br>
    <strong><u><i>Coding Screen</i></u></strong>
 </p>
 
