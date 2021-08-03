@@ -131,7 +131,7 @@ const Rootpage = () => {
                 >
                   <div className="flex flex-row justify-center items-center gap-x-2">
                     {loading ? (
-                      <div className="w-8 h-8 mx-3 border-4 border-blue-600 rounded-full loader" />
+                      <div className="w-8 h-8 mx-3 border-4 border-white rounded-full loader" />
                     ) : (
                       <>
                         <BsPlusSquare size={18} />

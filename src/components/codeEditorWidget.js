@@ -166,7 +166,7 @@ const CodeEditorWidget = ({ socket, code, setCode }) => {
               ref={editorRef}
               onChange={(inst) => {
                 setCode(inst.getValue());
-                throttle(sendChanges(inst), 500);
+                throttle(sendChanges(inst), 1000);
               }}
             />
           </div>
