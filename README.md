@@ -18,6 +18,8 @@
 <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"/>
 <span/>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bd99b2f0-02a6-4f48-bf8e-62d954a55577/deploy-status)](https://app.netlify.com/sites/code-draw/deploys)
+
 ## Screens
 
 <p align="center">
@@ -50,6 +52,7 @@ Find the backend API code for this project [here](https://github.com/parthpancha
 
 - The Code sharing gets delayed sometimes .
 - The Doodle disappears for the person drawing in some scenarios.
+- Mobile Friendly(Responsiveness).
 
 # Getting Started with Create React App
 
