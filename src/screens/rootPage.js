@@ -11,38 +11,79 @@ import { ReactComponent as Logo } from "../images/logo.svg";
 import { toast } from "react-toastify";
 import { CgEnter } from "react-icons/cg";
 import { BsPlusSquare } from "react-icons/bs";
+import { AiFillInfoCircle } from "react-icons/ai";
 
 dotenv.config();
 
 const Rootpage = () => {
   const [loading, setLoading] = useState(false);
+  const [newMeetLoading, setNewMeetLoading] = useState(false);
   const meetRef = useRef(null);
   const [newId, setId] = useState("");
   const history = useHistory();
 
-  const joinMeet = () => {
+  const validateMeet = async (meetId) => {
+    try {
+      const meetData = await axios.post(
+        process.env.REACT_APP_BACKEND_SERVER_URL + "/id/isValid",
+        { meetId }
+      );
+      const { status } = meetData.data;
+      return status;
+    } catch (error) {
+      toast.error(
+        "Oopsie 🤔 , There was an error generating a meet id . Try checking your internet",
+        {
+          style: {
+            fontFamily: "Poppins",
+          },
+        }
+      );
+
+      return false;
+    }
+  };
+
+  const joinMeet = async () => {
+    setNewMeetLoading(true);
     if (meetRef.current.value === "") {
-      toast.error("Oopsie 🤔  ! Enter a valid meet id !", {
+      toast.error("Oopsie 🤔 , Meet id can't be empty!", {
+        style: {
+          fontFamily: "Poppins",
+        },
+      });
+      setNewMeetLoading(false);
+      return;
+    }
+
+    const isValidMeet = await validateMeet(meetRef.current.value);
+
+    if (isValidMeet) {
+      history.push(`/${meetRef.current.value}`);
+    } else {
+      toast.error("Oopsie 🤔 , Enter a valid meet id !", {
+        style: {
+          fontFamily: "Poppins",
+        },
+      });
+    }
+    setNewMeetLoading(false);
+  };
+
+  const creatNewMeet = async () => {
+    if (newId !== "") {
+      toast.info("Psst 🤔 , You already generated a new id !", {
         style: {
           fontFamily: "Poppins",
         },
       });
       return;
     }
-
-    try {
-      history.push(`/${meetRef.current.value}`);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const creatNewMeet = async () => {
     setLoading(true);
 
     try {
       const meetingId = await axios.post(
-        process.env.REACT_APP_BACKEND_SERVER_URL + "/getId"
+        process.env.REACT_APP_BACKEND_SERVER_URL + "/id"
       );
       // console.log(meetingId.data.id);
       setId(meetingId.data.id);
@@ -116,10 +157,21 @@ const Rootpage = () => {
                     type="button"
                     onClick={() => joinMeet()}
                   >
-                    <div className="flex flex-row justify-center items-center gap-x-2">
+                    <div className="flex flex-row justify-center items-center gap-x-2 sm:gap-x-1">
+                      {newMeetLoading ? (
+                        <div className="w-8 h-8 mx-3 border-4 border-white rounded-full loader" />
+                      ) : (
+                        <>
+                          <CgEnter size={20} />
+                          <span>Join meet</span>
+                        </>
+                      )}
+                    </div>
+
+                    {/* <div className="flex flex-row justify-center items-center gap-x-2">
                       <CgEnter size={20} />
                       <span>Join meet</span>
-                    </div>
+                    </div> */}
                   </button>
                 </div>
 
@@ -139,16 +191,18 @@ const Rootpage = () => {
                         </>
                       )}
                     </div>
-
-                    {/* New meet */}
                   </button>
                 </div>
               </div>
               {newId && (
                 <FadeIn>
-                  <div className="flex flex-row text-md w-min p-3 rounded-md shadow-inner my-6 bg-white">
+                  <div className="flex flex-row text-md p-3 rounded-md shadow-inner my-6 bg-white">
                     {newId ?? ""}
                   </div>
+                  <span className="text-sm italic flex flex-row gap-x-1">
+                    <AiFillInfoCircle size={18} />
+                    Your friends join in with this id.
+                  </span>
                 </FadeIn>
               )}
             </form>
