@@ -2,6 +2,8 @@ import { ReactComponent as Logo } from "../images/logo.svg";
 import { useContext } from "react";
 import { SocketContext } from "../context/socket";
 import { useHistory } from "react-router-dom";
+import { MdExitToApp } from "react-icons/md";
+
 const Navbar = ({ isBoardActive, setBoardActive }) => {
   const n = "</Code>";
   const socket = useContext(SocketContext);
@@ -45,7 +47,7 @@ const Navbar = ({ isBoardActive, setBoardActive }) => {
             </button>
           </div>
         </div>
-        <div>
+        <div className="flex flex-row">
           <button
             className={`text-white w-26 px-2 py-2 bg-red-500	rounded-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100  `}
             onClick={() => {
@@ -54,7 +56,10 @@ const Navbar = ({ isBoardActive, setBoardActive }) => {
               nav.replace("/");
             }}
           >
-            Leave Meet
+            <span className="flex flex-row items-center justify-center gap-x-2">
+              <MdExitToApp size={20} />
+              Leave
+            </span>
           </button>
         </div>
       </div>
