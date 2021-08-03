@@ -94,67 +94,68 @@ const Rootpage = () => {
           <p className="leading-normal text-base md:text-2xl font-bold mb-8 mt-10 text-center md:text-left">
             Doodle on whiteboard or code on editor while a audio/video call.
           </p>
-
-          <form className="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
-            <div className="mb-4">
-              <label className="block text-blue-300 py-2 font-bold mb-2">
-                Join a meet
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                id="meetId"
-                type="text"
-                ref={meetRef}
-                placeholder="Meet-id ..."
-              />
-            </div>
-
-            <div className="flex flex-row">
-              <div className="flex items-center justify-between pt-4 mr-5">
-                <button
-                  className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                  type="button"
-                  onClick={() => joinMeet()}
-                >
-                  <div className="flex flex-row justify-center items-center gap-x-2">
-                    <CgEnter size={20} />
-                    <span> Join meet</span>
-                  </div>
-                </button>
+          <div className="md:w-full">
+            <form className=" bg-gray-900 opacity-75 rounded-lg	md:w-full shadow-lg  px-8 pt-6 pb-8 mb-4 ml-1 mr-1 ">
+              <div className="mb-4">
+                <label className="block text-blue-300 py-2 font-bold mb-2">
+                  Join a meet
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+                  id="meetId"
+                  type="text"
+                  ref={meetRef}
+                  placeholder="Meet-id ..."
+                />
               </div>
 
-              <div className="flex items-center justify-between pt-4">
-                <button
-                  className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                  type="button"
-                  onClick={() => creatNewMeet()}
-                >
-                  <div className="flex flex-row justify-center items-center gap-x-2">
-                    {loading ? (
-                      <div className="w-8 h-8 mx-3 border-4 border-white rounded-full loader" />
-                    ) : (
-                      <>
-                        <BsPlusSquare size={18} />
-                        <span> Create meet</span>
-                      </>
-                    )}
-                  </div>
-
-                  {/* New meet */}
-                </button>
-              </div>
-            </div>
-            {newId && (
-              <FadeIn>
-                <div className="flex flex-row text-md w-1/2 p-3 rounded-md shadow-inner my-6 bg-white">
-                  {newId ?? ""}
+              <div className="flex flex-row">
+                <div className="flex items-center justify-between pt-4 mr-5">
+                  <button
+                    className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+                    type="button"
+                    onClick={() => joinMeet()}
+                  >
+                    <div className="flex flex-row justify-center items-center gap-x-2">
+                      <CgEnter size={20} />
+                      <span>Join meet</span>
+                    </div>
+                  </button>
                 </div>
-              </FadeIn>
-            )}
-          </form>
+
+                <div className="flex items-center justify-between pt-4">
+                  <button
+                    className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+                    type="button"
+                    onClick={() => creatNewMeet()}
+                  >
+                    <div className="flex flex-row justify-center items-center gap-x-2 sm:gap-x-1">
+                      {loading ? (
+                        <div className="w-8 h-8 mx-3 border-4 border-white rounded-full loader" />
+                      ) : (
+                        <>
+                          <BsPlusSquare size={18} />
+                          <span>Create meet</span>
+                        </>
+                      )}
+                    </div>
+
+                    {/* New meet */}
+                  </button>
+                </div>
+              </div>
+              {newId && (
+                <FadeIn>
+                  <div className="flex flex-row text-md w-min p-3 rounded-md shadow-inner my-6 bg-white">
+                    {newId ?? ""}
+                  </div>
+                </FadeIn>
+              )}
+            </form>
+          </div>
         </div>
 
-        <div className="w-full xl:w-3/5 p-10 overflow-hidden ">
+        <div className="w-full xl:w-3/5 p-10 overflow-hidden " id="graphic">
           <img
             className="mx-auto w-full md:w-3/5 transform -rotate-6 transition hover:scale-100 duration-700 ease-in-out hover:rotate-6 bg-together"
             alt="Together"
