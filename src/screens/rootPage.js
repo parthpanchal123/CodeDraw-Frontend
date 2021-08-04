@@ -138,7 +138,7 @@ const Rootpage = () => {
               Doodle on whiteboard or code on editor while a audio/video call.
             </p>
             <div className="md:w-full">
-              <form className="opacity-80 bg-opacity-75 bg-gray-900 rounded-lg  md:w-full px-2 pt-6 pb-8 mb-4">
+              <form className="opacity-80 bg-opacity-75 bg-gray-900 rounded-lg shadow-inner md:w-full px-5 pt-6 pb-8 mb-4">
                 <div className="mb-4">
                   <label className="block text-blue-300 py-2 font-bold mb-2">
                     Join a meet
