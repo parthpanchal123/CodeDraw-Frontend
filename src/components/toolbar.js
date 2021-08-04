@@ -1,4 +1,4 @@
-import { GrUndo, GrBrush, GrPowerReset } from "react-icons/gr";
+import { GrUndo } from "react-icons/gr";
 import { AiOutlineClear } from "react-icons/ai";
 import { TiBrush } from "react-icons/ti";
 import Slider from "rc-slider";

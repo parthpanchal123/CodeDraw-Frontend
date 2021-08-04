@@ -34,6 +34,7 @@ html {
   height: 100vh;
   /* background-color: black; */
   background-image: url("https://i.imgur.com/PxMkOuM.png");
+  background-blend-mode: screen;
   overflow: inherit;
 }
 
