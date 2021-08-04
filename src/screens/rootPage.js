@@ -106,7 +106,7 @@ const Rootpage = () => {
     setLoading(false);
   };
   return (
-    <div className="w-screen h-screen" id="main-container">
+    <div className="w-screen overflow-auto" id="main-container">
       <div className="leading-normal tracking-normal text-indigo-400 bg-bg bg-center w-full h-full font-body ">
         <div className="w-full container mx-auto p-5">
           <div className="w-full flex items-center justify-start">
@@ -123,9 +123,9 @@ const Rootpage = () => {
           </div>
         </div>
 
-        <div className="container p-5 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div className="container p-8 mx-auto flex flex-wrap flex-col md:flex-row items-center">
           <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-hidden">
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight text-center md:text-left">
+            <h1 className="text-2xl md:text-4xl font-bold leading-tight text-center md:text-left">
               <span className="mr-2 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
                 Interact . Scribble . Code
               </span>
@@ -134,11 +134,11 @@ const Rootpage = () => {
                 Communication & brainstorming made easier .
               </p>
             </h1>
-            <p className="leading-normal text-base md:text-2xl font-bold mb-8 mt-10 text-center md:text-left">
+            <p className="leading-normal text-base md:text-2xl font-bold mb-8 mt-5 text-center md:text-left">
               Doodle on whiteboard or code on editor while a audio/video call.
             </p>
             <div className="md:w-full">
-              <form className=" bg-gray-900 opacity-75 rounded-lg	md:w-full shadow-lg  px-8 pt-6 pb-8 mb-4">
+              <form className="h-2/5  opacity-90 rounded-lg md:w-full shadow-lg  pt-6 pb-8 mb-4">
                 <div className="mb-4">
                   <label className="block text-blue-300 py-2 font-bold mb-2">
                     Join a meet
@@ -169,11 +169,6 @@ const Rootpage = () => {
                           </>
                         )}
                       </div>
-
-                      {/* <div className="flex flex-row justify-center items-center gap-x-2">
-                      <CgEnter size={20} />
-                      <span>Join meet</span>
-                    </div> */}
                     </button>
                   </div>
 

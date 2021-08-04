@@ -1,10 +1,12 @@
 import { GrUndo, GrBrush, GrPowerReset } from "react-icons/gr";
+import { AiOutlineClear } from "react-icons/ai";
+import { TiBrush } from "react-icons/ti";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
 const Toolbar = ({ setColor, undo, clearDrawing, setBrushRadius }) => {
   return (
-    <div className=" flex flex-row justify-center items-center rounded-full w-2/5  shadow-lg p-4 mb-3  ">
+    <div className=" flex flex-row justify-center items-center rounded-full w-2/5 bg-gray-900 shadow-2xl p-4 mb-3  ">
       <span
         className="rounded-full mx-1 h-8 w-8 flex items-center justify-center bg-black border-2 border-white transform hover:scale-110 motion-reduce:transform-none "
         onClick={(e) => setColor("black")}
@@ -25,22 +27,23 @@ const Toolbar = ({ setColor, undo, clearDrawing, setBrushRadius }) => {
         className="rounded-full mx-1 h-8 w-8 flex items-center justify-center transform hover:scale-110 motion-reduce:transform-none "
         onClick={(e) => setColor("green")}
       >
-        <GrUndo size={22} onClick={(e) => undo()} />
+        <GrUndo color={"white"} size={22} onClick={(e) => undo()} />
       </span>
 
       <span
         className="rounded-full mx-1 h-8 w-8 flex items-center justify-center transform hover:scale-110 motion-reduce:transform-none "
         onClick={(e) => setColor("green")}
       >
-        <GrPowerReset
+        <AiOutlineClear
           size={20}
+          color={"white"}
           // style={{ fontSize: "28px", color: "black" }}
           onClick={(e) => clearDrawing()}
         />
       </span>
 
       <span className=" flex flex-row ml-8 w-28">
-        <GrBrush size={22} className="mr-3" />
+        <TiBrush color={"white"} size={26} className="mr-3" />
         <Slider
           min={1}
           onChange={(num) => setBrushRadius(num)}
@@ -48,7 +51,8 @@ const Toolbar = ({ setColor, undo, clearDrawing, setBrushRadius }) => {
             borderColor: "grey",
           }}
           handleStyle={{
-            borderColor: "black",
+            borderColor: "blue",
+            borderWidth: "8px",
           }}
           max={6}
           included={false}

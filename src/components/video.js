@@ -243,7 +243,7 @@ const Video = ({ roomId, peer }) => {
 
   return (
     <div
-      className="h-screen w-1/6 m-5 overflow-y-scroll font-body"
+      className="h-screen w-1/6 m-5 overflow-y-auto font-body"
       ref={videoGridRef}
     >
       <video
@@ -256,14 +256,14 @@ const Video = ({ roomId, peer }) => {
 
       <div className="flex flex-row justify-center mt-1 rounded-lg shadow-2xl gap-x-4">
         {myCamOn === true ? (
-          <MdVideocam size={26} onClick={() => playStop()} />
+          <MdVideocam size={26} color={"white"} onClick={() => playStop()} />
         ) : (
-          <MdVideocamOff size={26} onClick={() => playStop()} />
+          <MdVideocamOff size={26} color={"white"} onClick={() => playStop()} />
         )}
         {myMicOn === true ? (
-          <MdMic size={26} onClick={() => muteUnmute()} />
+          <MdMic size={26} color={"white"} onClick={() => muteUnmute()} />
         ) : (
-          <MdMicOff size={26} onClick={() => muteUnmute()} />
+          <MdMicOff size={26} color={"white"} onClick={() => muteUnmute()} />
         )}
       </div>
       <ToastContainer autoClose={3000} position={"bottom-right"} />

@@ -32,10 +32,12 @@ html {
 html {
   width: 100vw;
   height: 100vh;
+  /* background-color: black; */
+  background-image: url("https://i.imgur.com/PxMkOuM.png");
   overflow: inherit;
 }
 
-/* #graphic {
+#graphic {
   transform: translatey(0px);
   animation: float 4s ease-in-out infinite;
-} */
+}

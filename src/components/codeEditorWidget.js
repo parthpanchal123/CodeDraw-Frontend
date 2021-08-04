@@ -192,7 +192,7 @@ const CodeEditorWidget = ({ socket, code, setCode }) => {
               <FaPlayCircle
                 className=""
                 size={26}
-                color="blue"
+                color="green"
                 onClick={() => executeCode()}
               />
             )}
