@@ -24,7 +24,18 @@ html {
   }
 }
 
-#graphic {
+#main-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: inherit;
+}
+
+/* #graphic {
   transform: translatey(0px);
   animation: float 4s ease-in-out infinite;
-}
+} */
