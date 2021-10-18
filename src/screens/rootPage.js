@@ -201,7 +201,7 @@ const Rootpage = () => {
                         className="cursor-pointer hover:text-blue-500"
                         onClick={async () => {
                           try {
-                            await navigator.clipboard.writeText("34435453");
+                            await navigator.clipboard.writeText(newId);
                             toast(" 🚀 Meeting id copied to clipboard ", {
                               style: {
                                 fontFamily: "Poppins",
