@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 import { CgEnter } from "react-icons/cg";
 import { BsPlusSquare } from "react-icons/bs";
 import { AiFillInfoCircle } from "react-icons/ai";
+import { HiClipboardCopy } from "react-icons/hi";
 
 dotenv.config();
 
@@ -193,8 +194,25 @@ const Rootpage = () => {
                 </div>
                 {newId && (
                   <FadeIn>
-                    <div className="flex flex-row text-md p-3 rounded-md shadow-inner my-6 bg-white">
-                      {newId ?? ""}
+                    <div className="flex flex-row justify-between text-md p-3 rounded-md shadow-inner my-6 bg-white">
+                      <span>{newId ?? ""}</span>
+                      <HiClipboardCopy
+                        size={20}
+                        className="cursor-pointer hover:text-blue-500"
+                        onClick={async () => {
+                          try {
+                            await navigator.clipboard.writeText("34435453");
+                            toast(" 🚀 Meeting id copied to clipboard ", {
+                              style: {
+                                fontFamily: "Poppins",
+                                color: "black",
+                              },
+                            });
+                          } catch (error) {
+                            console.log(error);
+                          }
+                        }}
+                      />
                     </div>
                     <span className="text-sm italic flex flex-row gap-x-1">
                       <AiFillInfoCircle size={18} />
