@@ -23,6 +23,10 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>CodeDraw</title>
+
+  <script type="text/javascript" src="node_modules/accessibility/dist/accessibility.min.js"></script>
+
+
 </head>
 
 <body>
@@ -38,6 +42,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+  <script type="text/javascript">
+    import {
+      Accessibility
+    } from 'accessibility/src/main';
+
+
+    window.addEventListener('load', function () {
+      new Accessibility();
+    }, false);
+  </script>
 </body>
 
 </html>
