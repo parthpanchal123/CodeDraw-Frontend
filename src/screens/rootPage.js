@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import Together from "../images/together.png";
+import Collab from "../images/collab.png";
 import axios from "axios";
 import dotenv from "dotenv";
 import FadeIn from "react-fade-in";
@@ -126,6 +127,14 @@ const Rootpage = () => {
         </div>
 
         <div className="container p-8 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+          <div className="w-full xl:w-3/5 p-10 overflow-hidden " id="graphic">
+            <img
+              className="mx-auto w-full md:w-3/5 transform -rotate-6 transition hover:scale-100 duration-700 ease-in-out hover:rotate-6 bg-collab"
+              alt="Together"
+              src={Collab}
+            />
+          </div>
+
           <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-hidden">
             <h1 className="text-2xl md:text-4xl font-bold leading-tight text-center md:text-left">
               <span className="mr-2 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
@@ -225,13 +234,13 @@ const Rootpage = () => {
             </div>
           </div>
 
-          <div className="w-full xl:w-3/5 p-10 overflow-hidden " id="graphic">
+          {/* <div className="w-full xl:w-3/5 p-10 overflow-hidden " id="graphic">
             <img
-              className="mx-auto w-full md:w-3/5 transform -rotate-6 transition hover:scale-100 duration-700 ease-in-out hover:rotate-6 bg-together"
+              className="mx-auto w-full md:w-3/5 transform -rotate-6 transition hover:scale-100 duration-700 ease-in-out hover:rotate-6 bg-collab"
               alt="Together"
-              src={Together}
+              src={Collab}
             />
-          </div>
+          </div> */}
         </div>
         <ToastContainer autoClose={3000} hideProgressBar={false} />
       </div>
