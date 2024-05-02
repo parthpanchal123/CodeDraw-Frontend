@@ -109,7 +109,7 @@ const Rootpage = () => {
     setLoading(false);
   };
   return (
-    <div className="w-screen overflow-auto" id="main-container">
+    <div className="w-screen h-screen overflow-auto" id="main-container">
       <div className="leading-normal tracking-normal text-indigo-400 bg-bg bg-center w-full h-full font-body ">
         <div className="w-full container mx-auto p-5">
           <div className="w-full flex items-center justify-start">
@@ -126,7 +126,7 @@ const Rootpage = () => {
           </div>
         </div>
 
-        <div className="container p-8 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div className="container h-screen p-8 mx-auto flex flex-wrap flex-col md:flex-row items-center">
           <div className="w-full xl:w-3/5 p-10 overflow-hidden " id="graphic">
             <img
               className="mx-auto w-full md:w-3/5 transform -rotate-6 transition hover:scale-100 duration-700 ease-in-out hover:rotate-6 bg-collab"
