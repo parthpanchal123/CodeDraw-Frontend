@@ -12,6 +12,19 @@ html {
   padding: 0;
 }
 
+body {
+  width: 100vw;
+}
+
+#root {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.excalidraw-container {
+  border-radius: 12px;
+}
+
 @keyframes float {
   0% {
     transform: translatey(0px);

@@ -4,6 +4,7 @@ import CanvasDraw from "react-canvas-draw";
 import Toolbar from "./toolbar";
 import CodeEditor from "../screens/codeEditor";
 import FadeIn from "react-fade-in";
+import ExcaliDrawWidget from "./ExcaliDrawWidget";
 
 const SharedContent = ({ isBoardActive, setBoardActive }) => {
   const socket = useContext(SocketContext);
@@ -17,12 +18,12 @@ const SharedContent = ({ isBoardActive, setBoardActive }) => {
   useEffect(() => {
     const canvas = canvasRef.current;
 
-    if (!canvas) throw new Error("This is bad");
+    // if (!canvas) throw new Error("This is bad");
     setCanvas(canvas);
 
-    socket.on("receive-drawing-data", throttle(handleReceivedData, 1000));
+    // socket.on("receive-drawing-data", throttle(handleReceivedData, 1000));
 
-    socket.on("receive-editor-data", throttle(handleReceivedEditorData, 1000));
+    // socket.on("receive-editor-data", throttle(handleReceivedEditorData, 1000));
     // canvas.loadSaveData(data);
   }, []);
 
@@ -49,9 +50,9 @@ const SharedContent = ({ isBoardActive, setBoardActive }) => {
       }
     };
   };
-  socket.on("receive-drawing-data", throttle(handleReceivedData, 1000));
+  // socket.on("receive-drawing-data", throttle(handleReceivedData, 1000));
 
-  socket.on("receive-editor-data", throttle(handleReceivedEditorData, 1000));
+  // socket.on("receive-editor-data", throttle(handleReceivedEditorData, 1000));
 
   const handleChange = (change) => {
     console.log("Sending");
@@ -67,32 +68,18 @@ const SharedContent = ({ isBoardActive, setBoardActive }) => {
   };
 
   return (
-    <div className="flex flex-grow font-body">
+    <div className="overflow-y-hidden flex flex-grow font-body">
       {isBoardActive ? (
-        <FadeIn className="m-5">
-          <Toolbar
-            setColor={setColor}
-            undo={undo}
-            clearDrawing={clearDrawing}
-            setBrushRadius={setBrushRadius}
-          />
-          <CanvasDraw
-            canvasWidth={window.screen.width * 0.8}
-            canvasHeight={window.screen.height * 0.7}
-            lazyRadius={0}
-            brushRadius={radius}
-            backgroundColor={"#d3d3d3"}
-            className="shadow-2xl  border-2 rounded-lg"
-            hideInterface={false}
-            brushColor={color}
-            loadTimeOffset={0}
-            onChange={(change) => throttle(handleChange(change), 1000)}
-            hideGrid={true}
-            immediateLoading={true}
-            saveData={data}
-            ref={canvasRef}
-          />
-        </FadeIn>
+        <div
+          style={{
+            width: "100%",
+            height: "80%",
+            marginLeft: "8px",
+            borderRadius: "125px",
+          }}
+        >
+          {<ExcaliDrawWidget socket={socket} />}
+        </div>
       ) : (
         <CodeEditor socket={socket} setCode={setCode} code={code} />
       )}

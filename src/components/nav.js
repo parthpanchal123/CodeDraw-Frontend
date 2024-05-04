@@ -10,7 +10,7 @@ const Navbar = ({ isBoardActive, setBoardActive }) => {
   const nav = useHistory();
   return (
     <div>
-      <div className=" flex flex-row items-center justify-between	 bg-transperant bg-opacity-90 px-12 py-4 w-full font-body">
+      <div className=" flex flex-row items-center justify-between	bg-transperant bg-opacity-100 px-12 py-4 w-full font-body">
         <div className="flex flex-row">
           <div className="text-2xl text-white font-semibold inline-flex items-center ">
             <Logo className="w-12 h-12" />

@@ -198,11 +198,12 @@ const CodeEditorWidget = ({ socket, code, setCode }) => {
             )}
           </div>
         </div>
-        <div className="flex flex-col mx-5">
-          <div className="my-3">
+        <div className="w-3/4 flex flex-row flex-grow mx-5 gap-x-2">
+          <div>
             <textarea
-              rows={4}
-              cols={80}
+              style={{ borderRadius: "6px", padding: "12px" }}
+              rows={6}
+              cols={63}
               className="shadow-2xl"
               placeholder="Input"
               ref={inputRef}
@@ -211,8 +212,9 @@ const CodeEditorWidget = ({ socket, code, setCode }) => {
           </div>
           <div>
             <textarea
+              style={{ borderRadius: "6px", padding: "12px" }}
               rows={6}
-              cols={80}
+              cols={63}
               value={output ?? " "}
               className="shadow-2xl"
               readOnly={true}

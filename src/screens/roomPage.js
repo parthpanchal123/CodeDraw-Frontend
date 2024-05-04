@@ -35,7 +35,7 @@ const RoomPage = ({ isBoardActive, setBoardActive }) => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row  xs:flex-col w-full justify-start gap-x-4 ">
+      <div className="overflow-y-hidden flex flex-col md:flex-row  xs:flex-col w-full justify-start gap-x-4 ">
         <SharedContent
           isBoardActive={isBoardActive}
           setBoardActive={setBoardActive}
